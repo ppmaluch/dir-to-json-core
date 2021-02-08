@@ -35,9 +35,9 @@ jobs:
         shell: bash
         run: |
           tag=$(git describe --tags --abbrev=0)
-          release_name="App-$tag-${{ matrix.target }}"
+          release_name="dir-to-json-core-$tag-${{ matrix.target }}"
           # Build everything
-          dotnet publish src/App/App.csproj --framework netcoreapp3.1 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+          dotnet publish dir-to-json-core/dir-to-json-core.csproj --framework netcoreapp3.1 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
           # Pack files
           if [ "${{ matrix.target }}" == "win-x64" ]; then
             # Pack to zip for Windows
@@ -50,6 +50,6 @@ jobs:
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
-          files: "App*"
+          files: "dir-to-json-core*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
