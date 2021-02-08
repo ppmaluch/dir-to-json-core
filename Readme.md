@@ -1,4 +1,4 @@
-![] https://github.com/ppmaluch/dir-to-json-core/workflows/Publish/badge.svg
+![](https://github.com/ppmaluch/dir-to-json-core/workflows/Publish/badge.svg)
 
 # dir-to-json-core CLI
 
